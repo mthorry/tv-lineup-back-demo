@@ -1,7 +1,7 @@
 class ShowsController < ApplicationController
 
   def index
-    user = User.find(params[:id])
+    user = User.find(1)
     shows = user.shows
     render json: shows
   end
@@ -38,7 +38,7 @@ class ShowsController < ApplicationController
     search = params[:search]
     response = RestClient::Request.execute(
       method: :get,
-      url: "http://api.tvmaze.com/search/shows?q=#{search}",
+      url: "https://api.tvmaze.com/search/shows?q=#{search}",
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
@@ -53,7 +53,7 @@ class ShowsController < ApplicationController
     id = params[:id]
     response = RestClient::Request.execute(
       method: :get,
-      url: "http://api.tvmaze.com/lookup/shows?thetvdb=#{id}",
+      url: "https://api.tvmaze.com/lookup/shows?thetvdb=#{id}",
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
