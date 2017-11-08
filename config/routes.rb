@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   delete '/episodes',   to: 'episodes#destroy'
 
   post '/login',  to: 'sessions#create'
-  get '/',  to: 'sessions#show'
+  get '/',  to: 'users#show'
   post '/signup', to: 'users#create'
 
   get '/:id/ratings', to: 'user_shows#index'
