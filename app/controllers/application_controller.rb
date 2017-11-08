@@ -30,4 +30,8 @@ class ApplicationController < ActionController::API
     # render json: {message: "Not welcome" }, status: 401 unless logged_in?
   end
 
+  def welcome
+    render json: {message: "Please log in"}, status: 200
+  end
+
 end
