@@ -16,7 +16,7 @@ class UsersController < ApplicationController
     if user
       render json: user
     else
-      render json: { message: "Error" }
+      render json: { message: "Please log in" }
     end
   end
 
