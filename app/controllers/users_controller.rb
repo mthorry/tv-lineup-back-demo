@@ -12,12 +12,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    user = User.find(params[:id])
-    if user
-      render json: user
-    else
-      render json: { message: "Please log in" }
-    end
+    render json: { message: "Please log in" }
   end
 
 end
