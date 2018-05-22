@@ -24,6 +24,9 @@ Rails.application.routes.draw do
   post '/:id/ratings',      to: 'user_shows#rate_show'
   delete '/:id/user_shows', to: 'user_shows#destroy'
 
+  get '/:id/user_episodes/ratings', to: 'user_episodes#index'
+  post '/:id/user_episodes/ratings', to: 'user_episodes#rate_episode'
+  post '/:id/user_episodes/watched', to: 'user_episodes#watched_episode'
   delete '/:id/user_episodes', to: 'user_episodes#destroy'
 
 end

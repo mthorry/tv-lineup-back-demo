@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 20171014142518) do
     t.integer "user_id"
     t.integer "episode_id"
     t.string "rating"
-    t.boolean "watched"
+    t.boolean "watched", default: false
   end
 
   create_table "user_shows", force: :cascade do |t|
